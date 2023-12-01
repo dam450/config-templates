@@ -1,0 +1,37 @@
+.logo {
+  color: red;
+  font-size: 3.5rem;
+  padding: 1.5em;
+
+  will-change: filter;
+  transition: filter 300ms, color 1.5s;
+}
+
+.logo:hover {
+  color: green;
+  filter: drop-shadow(0 0 2em green);
+}
+
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  35% {
+    transform: rotate(15deg);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 10s linear;
+  }
+}
