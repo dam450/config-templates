@@ -11,11 +11,21 @@
   "ignorePatterns": ["dist", ".eslintrc.cjs"],
   "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
   "settings": { "react": { "version": "detect" } },
-  "plugins": ["react-refresh"],
+  "plugins": ["react-refresh", "eslint-plugin-import-helpers"],
   "rules": {
-    "react-refresh/only-export-components": [
+    "import-helpers/order-imports": [
       "warn",
-      { "allowConstantExport": true }
-    ]
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          "type",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
   }
 }
